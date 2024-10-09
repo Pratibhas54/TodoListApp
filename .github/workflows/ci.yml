@@ -7,7 +7,7 @@ on:
 
 jobs:
   call-push-artifact:
-    uses: Pratibhas54/SampleDotNetApp/.github/workflows/push-artifact.yml@main # Adjust the branch if necessary
+    uses: Pratibhas54/SampleDotNetApp/.github/workflows/dotnet-build-and-push.yml
     with:
       dotnet_version: '8.0.x'
       jfrog_url: 'http://51.143.99.109:8082/artifactory'
