@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-
 jobs:
   call-push-artifact:
     uses: Pratibhas54/SampleDotNetApp/.github/workflows/dotnet-build-and-push.yml@main
