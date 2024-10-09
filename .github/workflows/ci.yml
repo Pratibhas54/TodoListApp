@@ -1,0 +1,15 @@
+name: Build and Push to JFrog
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  call-push-artifact:
+    uses: Pratibhas54/SampleDotNetApp/.github/workflows/push-artifact.yml@main # Adjust the branch if necessary
+    with:
+      dotnet_version: '8.0.x'
+      jfrog_url: 'http://51.143.99.109:8082/artifactory'
+      jfrog_username: ${{ secrets.JFROG_USERNAME }}
+      jfrog_api_key: ${{ secrets.JFROG_API_KEY }}
