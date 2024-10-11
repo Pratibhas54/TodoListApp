@@ -1,15 +1,12 @@
-name: CI
+name: Call Reusable Workflow to Push Artifact
 
 on:
   push:
     branches:
-      - main
-
+      - main  
 jobs:
-  call-push-artifact:
+  push-artifact:
     uses: Pratibhas54/SampleDotNetApp/.github/workflows/dotnet-build-and-push.yml@main
-    with:
-      dotnet_version: '8.0.x'
-      jfrog_url: 'http://51.143.99.109:8082/artifactory/'
-      jfrog_username: ${{ secrets.JFROG_USERNAME }}
-      jfrog_api_key: ${{ secrets.JFROG_API_KEY }}
+      dotnet_version: '8.0.x' 
+      csproj_file: './TodoListApp/TodoListApp.csproj'  
+      jfrog_artifact_path: 'test/TOdolist'  
