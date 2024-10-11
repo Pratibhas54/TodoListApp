@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main  
+
 jobs:
   push-artifact:
     uses: Pratibhas54/SampleDotNetApp/.github/workflows/dotnet-build-and-push.yml@main
@@ -11,3 +12,7 @@ jobs:
       dotnet_version: '8.0.x' 
       csproj_file: './TodoListApp.csproj'
       jfrog_artifact_path: 'test/Todolist'  
+    secrets:
+      JFROG_URL: ${{ secrets.JFROG_URL }}
+      JFROG_USERNAME: ${{ secrets.JFROG_USERNAME }}
+      JFROG_API_KEY: ${{ secrets.JFROG_API_KEY }}
