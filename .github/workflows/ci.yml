@@ -9,5 +9,5 @@ jobs:
     uses: Pratibhas54/SampleDotNetApp/.github/workflows/dotnet-build-and-push.yml@main
     with:
       dotnet_version: '8.0.x' 
-      csproj_file: './TodoListApp/TodoListApp.csproj'  
-      jfrog_artifact_path: 'test/TOdolist'  
+      csproj_file: '.TodoListApp/TodoListApp.csproj'
+      jfrog_artifact_path: 'test/Todolist'  
