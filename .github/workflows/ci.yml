@@ -3,18 +3,15 @@ name: Call Reusable Workflow to Push Artifact
 on:
   push:
     branches:
-      - main  # or the branch you want to trigger on
+      - main  # or any branch you want to trigger the workflow on
 
 jobs:
   push-artifact:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Debug Secrets
-        run: |
-          echo "JFROG_URL: ${{ secrets.JFROG_URL }}"
-          echo "JFROG_USERNAME: ${{ secrets.JFROG_USERNAME }}"
-          echo "JFROG_API_KEY: ${{ secrets.JFROG_API_KEY }}"
-        env:
-          JFROG_URL: ${{ secrets.JFROG_URL }}
-          JFROG_USERNAME: ${{ secrets.JFROG_USERNAME }}
-          JFROG_API_KEY: ${{ secrets.JFROG_API_KEY }}
+    uses: Pratibhas54/SampleDotNetApp/.github/workflows/dotnet-build-and-push.yml@main
+    with:
+      dotnet_version: '8.0.x' 
+      csproj_file: './TodoListApp.csproj'
+      jfrog_artifact_path: 'test/Todolist'
+      jfrog_url: ${{ secrets.JFROG_URL }}          
+      jfrog_username: ${{ secrets.JFROG_USERNAME }} 
+      jfrog_api_key: ${{ secrets.JFROG_API_KEY }}   
