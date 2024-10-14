@@ -12,7 +12,4 @@ jobs:
       dotnet_version: '8.0.x' 
       csproj_file: './TodoListApp.csproj'
       jfrog_artifact_path: 'test/Todolist'
-    secrets:  
-      jfrog_url: ${{ secrets.JFROG_URL }}          
-      jfrog_username: ${{ secrets.JFROG_USERNAME }} 
-      jfrog_api_key: ${{ secrets.JFROG_API_KEY }}   
+  
